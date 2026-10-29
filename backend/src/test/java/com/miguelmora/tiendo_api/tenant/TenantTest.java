@@ -31,6 +31,7 @@ public class TenantTest {
     public void enable_shouldActivateTenant(){
         Tenant tenant = new Tenant("Darxus", "04121314493", "darxus-pzo");
 
+        tenant.disable();
         tenant.enable();
 
         assertTrue(tenant.isActive());
