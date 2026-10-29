@@ -25,10 +25,10 @@ public class TenantServiceTest {
     @Test
     public void findBySlug_shouldReturnTenantWhenExistsAndActive() {
         Tenant tenant = new Tenant("Darxus", "04121314493", "darxus-pzo");
-        when(tenantRepository.findBySlugAndDisabledAtIsNull("el-patio"))
+        when(tenantRepository.findBySlugAndDisabledAtIsNull(tenant.getSlug()))
                 .thenReturn(Optional.of(tenant));
 
-        PublicTenantResponse result = tenantService.findBySlug("el-patio");
+        PublicTenantResponse result = tenantService.findBySlug(tenant.getSlug());
 
         assertNotNull(result);
         assertEquals("darxus-pzo", result.slug());
