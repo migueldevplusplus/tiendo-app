@@ -1,10 +1,12 @@
+import { Routes, Route } from "react-router"
+import StorePage from "./pages/StorePage.tsx"
 
 function App() {
   return (
-    <>
-      <h1>tiendo</h1>
-    </>
-  )
+    <Routes>
+      <Route path="/:slug" element={<StorePage />}></Route>
+    </Routes>
+  );
 }
 
 export default App
